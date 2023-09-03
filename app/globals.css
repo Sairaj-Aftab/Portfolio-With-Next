@@ -3,25 +3,178 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* --primary-color: #1dbf73; */
+  --primary-color: #03a9f4;
+}
+body {
+  background-color: #011627;
+  color: #ffffff;
+}
+@media (min-width: 1200px) {
+  body {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+
+    border-left: 1px solid #334155;
+    border-right: 1px solid #334155;
+  }
+}
+img {
+  max-width: 100%;
+}
+.text-md {
+  font-size: 1.125rem;
+}
+.bg_card {
+  /* @apply bg-slate-800; */
+  /* background-color: rgb(30, 41, 59, 0.8); */
+  /* From https://css.glass */
+  background: rgba(30, 41, 59, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(30, 41, 59, 0.07);
+}
+.btn {
+  background-color: var(--primary-color);
+  @apply text-white py-2 px-10 rounded-md text-md;
+}
+.slide_head {
+  text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+  color: var(--primary-color);
+  @apply lg:text-5xl text-3xl font-mono font-extrabold;
+}
+.head_text_parent {
+  @apply relative;
+}
+.head_text {
+  @apply text-5xl md:text-7xl text-center font-extrabold text-slate-400 absolute top-0 left-0 right-0;
+}
+.head_text:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--primary-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.head_text:nth-child(2) {
+  color: var(--primary-color);
+  animation: head-text-animate 4s ease-in-out infinite;
+}
+.title_text {
+  @apply text-xl font-semibold text-gray-200;
+}
+.shadow_text {
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4),
+    0px 0px 10px rgba(255, 255, 255, 0.4), 0px 0px 15px rgba(255, 255, 255, 0.4),
+    0px 0px 20px rgba(3, 169, 244, 1), 0px 0px 30px rgba(3, 169, 244, 1),
+    0px 0px 40px rgba(3, 169, 244, 1), 0px 0px 55px rgba(3, 169, 244, 1),
+    0px 0px 75px rgba(3, 169, 244, 1);
+  /* text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4); */
+}
+/* Slide Image */
+.slide_img {
+  /* filter: drop-shadow(16px 16px 20px black) invert(75%); */
+  filter: grayscale(1);
+  z-index: -1;
+}
+/* SwiperJS */
+.swiper {
+  width: 100% !important;
+}
+
+.testimonial_section .swiper-wrapper {
+  padding: 60px 0 !important;
+}
+.swiper-slide {
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.testimonial_section .swiper-slide {
+  @apply md:w-[60%] lg:w-[500px] !important;
+}
+.swiper-pagination {
+  @apply bottom-[30px] !important;
+}
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background: white !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background: blue !important;
+}
+
+/* Header Menu */
+.menu span {
+  transform: scale(1.1) skewY(-5deg);
+  display: inline-block;
+}
+.menu span:hover {
+  transform: scale(1) skewY(0deg);
+}
+.skills span {
+  @apply text-lg font-bold bg-slate-800 py-1 px-3 rounded-md border flex gap-2 items-center;
+}
+.about-p {
+  @apply text-justify text-slate-200 hover:text-black text-sm font-extralight leading-6 first-letter:uppercase first-letter:text-5xl first-letter:mr-2;
+  display: inline;
+  background-repeat: no-repeat;
+  transition: all 1000ms ease-in-out;
+  background-position: left;
+  background-size: 0% 100%;
+  background-image: linear-gradient(var(--primary-color), var(--primary-color));
+}
+.about-p:hover {
+  background-size: 100% 100%;
+}
+
+/* .about-p {
+	
+	
+  } */
+
+@keyframes head-text-animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Contact Section */
+.contact input {
+  @apply bg-transparent border border-slate-600 rounded-md py-1 px-2 text-lg italic font-medium text-slate-200;
+}
+.contact textarea {
+  @apply bg-transparent border border-slate-600 rounded-md py-1 px-2 text-lg italic font-medium text-slate-200;
+}
+
+.project_card span {
+  @apply border-[.5px] border-slate-600 px-1 rounded-sm text-sm font-extralight text-slate-300;
 }
