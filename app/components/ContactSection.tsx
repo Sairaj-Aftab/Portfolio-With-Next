@@ -45,6 +45,9 @@ function ContactSection({
   const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+  const changeMsgValue = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const submitEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -89,7 +92,7 @@ function ContactSection({
               rows={7}
               name="message"
               value={input.message}
-              onChange={changeValue}
+              onChange={changeMsgValue}
               placeholder="Enter your message"
             ></textarea>
             <button type="submit" className="btn text-lg font-semibold">
