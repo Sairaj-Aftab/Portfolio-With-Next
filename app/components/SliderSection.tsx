@@ -14,10 +14,10 @@ type props = {
 function SliderSection({ firstTitle, title, desTitle }: props) {
   return (
     <div>
-      <div className="lg:h-[100vh] sm:flex sm:flex-row flex flex-col-reverse justify-around items-center slide">
+      <div className="lg:h-[100vh] h-[100vh] flex flex-col-reverse gap-10 md:flex-row justify-center md:items-center slide">
         <div
           data-aos="fade-right"
-          className="flex-1 flex flex-col items-center gap-3 py-5 sm:py-0"
+          className="md:flex-1 flex flex-col items-center gap-3 py-5 sm:py-0"
         >
           <h1 className="shadow_text lg:text-2xl text-xl font-semibold text-white">
             {firstTitle}
@@ -32,12 +32,12 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
         </div>
         <div
           data-aos="fade-left"
-          className="flex-1 flex flex-col items-center justify-center text-center sm:block mt-5 sm:mt-0"
+          className="md:flex-1 flex flex-col items-center justify-center text-center sm:block mt-5 sm:mt-0"
         >
           <Image
             src={personal}
             alt="Sairaj Aftab"
-            className="rounded-b-[42px] sm:rounded-b-[110px] slide_img w-[95%] sm:w-[80%] mx-auto"
+            className="rounded-b-[42px] sm:rounded-b-[110px] slide_img w-[95%] h-auto sm:w-[80%] mx-auto"
           />
         </div>
       </div>
@@ -51,7 +51,7 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
           speed={2}
           src={deploy}
           // style={{ width: "100%", height: "100%" }}
-          className="scale-125 md:scale-100 lg:w-full lg:h-full"
+          className="scale-125 md:scale-100 w-full h-full"
           background="#011627"
         ></Player>
       </div>
