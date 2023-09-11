@@ -1,21 +1,18 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import deploy from "../../public/animation/deploy.json";
 
 type props = {
   head_title: string;
 };
 function AboutSection({ head_title }: props) {
   return (
-    <div className="py-5 relative">
+    <div data-aos="zoom-in" className="py-5 relative">
       <div className="flex flex-col gap-16">
         <div className="head_text_parent">
           <h1 className="head_text text-center">{head_title}</h1>
           <h1 className="head_text text-center">{head_title}</h1>
         </div>
-        <motion.div className="sm:flex gap-5 justify-between">
+        <div className="sm:flex gap-5 justify-between">
           <div className="flex-1">
             <div className="pl-5 pt-5 text-justify">
               <p className="about-p">
@@ -45,18 +42,7 @@ function AboutSection({ head_title }: props) {
             <h2 className="text-center text-2xl font-bold">Skills</h2>
             <div className="skills flex gap-3 flex-wrap text-white font-semibold text-sm"></div>
           </div> */}
-        </motion.div>
-      </div>
-      <div className="top-0 bottom-0 left-0 right-0 -z-20 fixed flex flex-col items-center justify-center">
-        <Player
-          autoplay
-          loop
-          speed={2}
-          src={deploy}
-          // style={{ width: "100%", height: "100%" }}
-          className="scale-125 md:scale-100 lg:w-full lg:h-full"
-          background="#011627"
-        ></Player>
+        </div>
       </div>
     </div>
   );

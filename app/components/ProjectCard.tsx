@@ -37,7 +37,7 @@ function ProjectCard() {
           </div>
           <Link
             href="/"
-            className="bg-blue-500 rounded-md py-1 px-2 text-sm font-semibold text-white"
+            className="bg-[var(--primary-color)] rounded-md py-1 px-2 text-sm font-semibold text-white"
           >
             Live Demo
           </Link>

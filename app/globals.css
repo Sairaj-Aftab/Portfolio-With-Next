@@ -5,6 +5,7 @@
 :root {
   /* --primary-color: #1dbf73; */
   --primary-color: #03a9f4;
+  /* --primary-color: #33f403; */
 }
 body {
   background-color: #011627;
@@ -82,6 +83,22 @@ img {
   width: 100% !important;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: #00000080;
+  border-radius: 50%;
+  height: 50px !important;
+  width: 50px !important;
+}
+.swiper-button-disabled {
+  display: none !important;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 30px !important;
+  color: var(--primary-color) !important;
+}
+
 .testimonial_section .swiper-wrapper {
   padding: 60px 0 !important;
 }
@@ -96,6 +113,12 @@ img {
 }
 .swiper-pagination {
   @apply bottom-[30px] !important;
+}
+.swiper-project {
+  padding-bottom: 20px !important;
+}
+.swiper-project .swiper-pagination {
+  bottom: 1px !important;
 }
 .swiper-pagination-bullet {
   width: 10px !important;

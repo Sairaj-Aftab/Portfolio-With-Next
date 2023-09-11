@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { BiEnvelope, BiMap } from "react-icons/bi";
 import { BsWhatsapp } from "react-icons/bs";
 
@@ -9,6 +10,13 @@ type props = {
   email: string[];
   whatsApp: string[];
   address: string;
+};
+
+type input = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 };
 
 function ContactSection({
@@ -27,6 +35,22 @@ function ContactSection({
     loading: "lazy",
     referrerpolicy: "no-referrer-when-downgrade",
   };
+  const [input, setInput] = useState<input>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const submitEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    alert(input);
+  };
+
   return (
     <div className="py-5">
       <div className="flex flex-col gap-16">
@@ -35,14 +59,43 @@ function ContactSection({
           <h1 className="head_text text-center">{head_title}</h1>
         </div>
         <div className="md:flex justify-between gap-5 px-5 mt-10">
-          <div className="contact flex-1 flex flex-col gap-3">
+          <form
+            onSubmit={submitEmail}
+            className="contact flex-1 flex flex-col gap-3"
+          >
             <h2 className="title_text">{title2}</h2>
-            <input type="text" placeholder="Enter your name" />
-            <input type="text" placeholder="Enter your email" />
-            <input type="text" placeholder="Enter your subject" />
-            <textarea rows={7} placeholder="Enter your message"></textarea>
-            <button className="btn text-lg font-semibold">Send Mail</button>
-          </div>
+            <input
+              type="text"
+              name="name"
+              value={input.name}
+              onChange={changeValue}
+              placeholder="Enter your name"
+            />
+            <input
+              type="text"
+              name="email"
+              value={input.email}
+              onChange={changeValue}
+              placeholder="Enter your email"
+            />
+            <input
+              type="text"
+              name="subject"
+              value={input.subject}
+              onChange={changeValue}
+              placeholder="Enter your subject"
+            />
+            <textarea
+              rows={7}
+              name="message"
+              value={input.message}
+              onChange={changeValue}
+              placeholder="Enter your message"
+            ></textarea>
+            <button type="submit" className="btn text-lg font-semibold">
+              Send Mail
+            </button>
+          </form>
           <div className="flex-1 flex flex-col gap-5">
             {/* Email */}
             <div className="bg_card flex items-center gap-5 p-5 rounded-md">
