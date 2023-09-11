@@ -14,7 +14,7 @@ function AboutSection({ head_title }: props) {
         </div>
         <div className="sm:flex gap-5 justify-between">
           <div className="flex-1">
-            <div className="pl-5 pt-5 text-justify">
+            <div className="px-5 pt-5 text-justify">
               <p className="about-p">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet,
                 numquam laudantium culpa rerum nemo explicabo labore nisi unde,

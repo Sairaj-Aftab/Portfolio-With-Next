@@ -37,7 +37,7 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
           <Image
             src={personal}
             alt="Sairaj Aftab"
-            className="rounded-b-[42px] sm:rounded-b-[110px] slide_img  w-[80%] mx-auto"
+            className="rounded-b-[42px] sm:rounded-b-[110px] slide_img w-[95%] sm:w-[80%] mx-auto"
           />
         </div>
       </div>
