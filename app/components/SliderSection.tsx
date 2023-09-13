@@ -4,6 +4,7 @@ import Image from "next/image";
 import personal from "../../public/sairaj2.png";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import deploy from "../../public/animation/deploy.json";
+import Button from "./HelperCom/Button";
 
 type props = {
   firstTitle?: string;
@@ -26,9 +27,10 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
           <p className="lg:text-lg text-sm text-center font-semibold text-white italic px-2 lg:px-0">
             {desTitle}
           </p>
-          <button className="btn text-lg font-semibold flex gap-1">
+          <Button text="Get in touch" />
+          {/* <button className="btn text-lg font-semibold flex gap-1">
             <span>Get in touch</span>
-          </button>
+          </button> */}
         </div>
         <div
           data-aos="fade-left"

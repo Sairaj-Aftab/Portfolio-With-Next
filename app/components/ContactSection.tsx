@@ -27,14 +27,6 @@ function ContactSection({
   whatsApp,
   address,
 }: props) {
-  const iframeAtt: any = {
-    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118830.24933438892!2d91.92049950540515!3d21.45103776131262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adc7ea2ab928c3%3A0x3b539e0a68970810!2sCox&#39;s%20Bazar%2C%20Bangladesh!5e0!3m2!1sen!2sus!4v1685738139793!5m2!1sen!2sus",
-    width: "100%",
-    height: "200",
-    allowfullscreen: "",
-    loading: "lazy",
-    referrerpolicy: "no-referrer-when-downgrade",
-  };
   const [input, setInput] = useState<input>({
     name: "",
     email: "",
@@ -151,7 +143,15 @@ function ContactSection({
                   </p>
                 </div>
               </div>
-              <iframe {...iframeAtt}></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118830.72124492792!2d91.91866835700449!3d21.450458662456036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adc7ea2ab928c3%3A0x3b539e0a68970810!2sCox&#39;s%20Bazar!5e0!3m2!1sen!2sbd!4v1694633233329!5m2!1sen!2sbd"
+                width="100%"
+                height="250"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>
