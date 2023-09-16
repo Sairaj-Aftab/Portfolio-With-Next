@@ -5,6 +5,7 @@ import personal from "../../public/sairaj2.png";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import deploy from "../../public/animation/deploy.json";
 import Button from "./HelperCom/Button";
+import { TypeAnimation } from "react-type-animation";
 
 type props = {
   firstTitle?: string;
@@ -14,7 +15,7 @@ type props = {
 
 function SliderSection({ firstTitle, title, desTitle }: props) {
   return (
-    <div>
+    <div id="Home">
       <div className="lg:h-[100vh] h-[100vh] flex flex-col-reverse gap-10 md:flex-row justify-center md:items-center slide">
         <div
           data-aos="fade-right"
@@ -23,7 +24,26 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
           <h1 className="shadow_text lg:text-2xl text-xl font-semibold text-white">
             {firstTitle}
           </h1>
-          <h1 className="slide_head">{title}</h1>
+          <div className="text-black text-start"></div>
+          {/* <h1 className="slide_head">{title}</h1> */}
+          <h1 className="slide_head">
+            <TypeAnimation
+              preRenderFirstString={true}
+              sequence={[
+                500,
+                "Hey!I'm", // initially rendered starting point
+                1000,
+                "Hey!I'm Sairaj Aftab",
+                1000,
+                "Hey!I'm a Developer",
+                500,
+              ]}
+              speed={30}
+              deletionSpeed={50}
+              // style={{ fontSize: "2em" }}
+              repeat={Infinity}
+            />
+          </h1>
           <p className="lg:text-lg text-sm text-center font-semibold text-white italic px-2 lg:px-0">
             {desTitle}
           </p>
@@ -45,6 +65,7 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
       </div>
       <div
         data-aos="zoom-in"
+        data-aos-duration="1500"
         className="top-0 bottom-0 left-0 right-0 -z-20 fixed flex flex-col items-center justify-center"
       >
         <Player

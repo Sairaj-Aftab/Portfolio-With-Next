@@ -47,7 +47,7 @@ function ContactSection({
   };
 
   return (
-    <div className="py-5">
+    <div id="Contact" className="py-5">
       <div className="flex flex-col gap-16">
         <div className="head_text_parent">
           <h1 className="head_text text-center">{head_title}</h1>
@@ -55,6 +55,7 @@ function ContactSection({
         </div>
         <div className="md:flex justify-between gap-5 px-5 mt-10">
           <form
+            data-aos="fade-right"
             onSubmit={submitEmail}
             className="contact flex-1 flex flex-col gap-3"
           >
@@ -91,7 +92,7 @@ function ContactSection({
               Send Mail
             </button>
           </form>
-          <div className="flex-1 flex flex-col gap-5">
+          <div data-aos="fade-left" className="flex-1 flex flex-col gap-5">
             {/* Email */}
             <div className="bg_card flex items-center gap-5 p-5 rounded-md">
               <div className="text-3xl">

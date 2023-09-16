@@ -6,7 +6,7 @@ type props = {
 };
 function AboutSection({ head_title }: props) {
   return (
-    <div data-aos="zoom-in" className="py-5 relative">
+    <div id="About" data-aos="zoom-in" className="py-5 relative">
       <div className="flex flex-col gap-16">
         <div className="head_text_parent">
           <h1 className="head_text text-center">{head_title}</h1>

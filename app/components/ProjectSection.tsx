@@ -10,7 +10,7 @@ function ProjectSection({ head_title }: { head_title: string }) {
     modules: [Pagination],
   };
   return (
-    <div data-aos="zoom-in-up">
+    <div id="Projects" data-aos="zoom-in-up">
       <div className="text-center flex flex-col gap-16">
         <div className="head_text_parent">
           <h1 className="head_text">{head_title}</h1>

@@ -4,12 +4,14 @@
 
 :root {
   /* --primary-color: #1dbf73; */
+  --primary-background: #011627;
   --primary-color: #03a9f4;
   /* --primary-color: #33f403; */
 }
 body {
-  background-color: #011627;
+  background-color: var(--primary-background);
   color: #ffffff;
+  overflow-x: hidden;
 }
 @media (min-width: 1200px) {
   body {
@@ -26,6 +28,9 @@ img {
 }
 .text-md {
   font-size: 1.125rem;
+}
+.menu_item.active {
+  background-color: black;
 }
 .bg_card {
   /* @apply bg-slate-800; */
@@ -44,7 +49,7 @@ img {
 .slide_head {
   text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
   color: var(--primary-color);
-  @apply lg:text-5xl sm:text-4xl text-2xl font-mono font-extrabold;
+  @apply lg:text-5xl sm:text-4xl text-2xl font-mono font-extrabold w-[278px] sm:w-[416px] lg:w-[555px];
 }
 /* Slide Image */
 .slide_img {
@@ -298,7 +303,7 @@ img {
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: black;
+  background-color: var(--primary-background);
   margin: 1px;
   border-radius: 5px;
   padding: 0.75rem 3rem;

@@ -1,49 +1,122 @@
 "use client";
+// import Link from "next/link";
 import React, { useState } from "react";
-import { BiMenu, BiX } from "react-icons/bi";
+import { Link } from "react-scroll";
+import {
+  BiMenu,
+  BiX,
+  BiHomeHeart,
+  BiBookAlt,
+  BiEnvelope,
+  BiUser,
+  BiHighlight,
+} from "react-icons/bi";
 
 const menu = [
   {
     id: 1,
     name: "Home",
-    path: "#",
+    path: "/",
+    icon: <BiHomeHeart fontSize={30} />,
   },
   {
     id: 2,
     name: "About",
     path: "#",
+    icon: <BiUser fontSize={30} />,
   },
   {
     id: 3,
     name: "Projects",
     path: "#",
+    icon: <BiBookAlt fontSize={30} />,
   },
   {
     id: 4,
-    name: "Blogs",
+    name: "Testimonial",
     path: "#",
+    icon: <BiBookAlt fontSize={30} />,
   },
   {
     id: 5,
+    name: "Blogs",
+    path: "/blogs",
+    icon: <BiHighlight fontSize={30} />,
+  },
+  {
+    id: 6,
     name: "Contact",
     path: "#",
+    icon: <BiEnvelope fontSize={30} />,
   },
 ];
 
 function Header() {
-  const [mMenu, setMenu] = useState(false);
+  const [mMenu, setMenu] = useState<boolean>(false);
+
+  const scrollSection = (name: string) => {
+    console.log(name);
+  };
 
   return (
     <div className="fixed top-5 left-0 w-full z-50 flex justify-center">
-      <div className="bg_card rounded-xl py-1 px-5 flex gap-10 text-lg font-[500]">
-        {menu.map((menu) => (
-          <a
-            key={menu.id}
-            href={menu.path}
-            className="bg-black px-2 rounded-md hover:bg-black"
+      <div className="hidden md:flex items-center">
+        {mMenu && (
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            className="bg_card rounded-xl py-1 px-6 flex gap-10 text-lg font-[500]"
           >
-            <span>{menu.name}</span>
-          </a>
+            {menu.map((menu) => (
+              <Link
+                activeClass="active"
+                to={menu.name}
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={500}
+                key={menu.id}
+                // href={menu.path}
+                // onClick={() => scrollSection(menu.name)}
+                className="menu_item px-2 rounded-md hover:bg-black"
+              >
+                <span>{menu.name}</span>
+              </Link>
+            ))}
+          </div>
+        )}
+        <div className="absolute right-12 lg:right-20 xl:right-32 top-1">
+          {!mMenu && (
+            <BiMenu
+              onClick={() => setMenu(!mMenu)}
+              fontSize={30}
+              className="cursor-pointer"
+            />
+          )}
+          {mMenu && (
+            <BiX
+              onClick={() => setMenu(!mMenu)}
+              fontSize={30}
+              className="cursor-pointer"
+            />
+          )}
+        </div>
+      </div>
+      <div className="bg_card w-[93%] rounded-xl py-1 flex justify-evenly items-center md:hidden">
+        {menu.map((menu) => (
+          <Link
+            activeClass="active"
+            to={menu.name}
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+            key={menu.id}
+            // href={menu.path}
+            className="rounded-md hover:bg-black"
+          >
+            <div>{menu.icon}</div>
+          </Link>
         ))}
       </div>
     </div>
