@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ text }: { text: string }) => {
+const ButtonEle = ({ text }: { text: string }) => {
   return (
     <button className="button">
       {/* <!-- background colors --> */}
@@ -16,4 +16,4 @@ const Button = ({ text }: { text: string }) => {
   );
 };
 
-export default Button;
+export default ButtonEle;

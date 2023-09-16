@@ -54,13 +54,9 @@ const menu = [
 function Header() {
   const [mMenu, setMenu] = useState<boolean>(false);
 
-  const scrollSection = (name: string) => {
-    console.log(name);
-  };
-
   return (
     <div className="fixed top-5 left-0 w-full z-50 flex justify-center">
-      <div className="hidden md:flex items-center">
+      <div className="hidden md:block">
         {mMenu && (
           <div
             data-aos="zoom-in"
@@ -76,8 +72,6 @@ function Header() {
                 offset={-50}
                 duration={500}
                 key={menu.id}
-                // href={menu.path}
-                // onClick={() => scrollSection(menu.name)}
                 className="menu_item px-2 rounded-md hover:bg-black"
               >
                 <span>{menu.name}</span>
@@ -102,7 +96,7 @@ function Header() {
           )}
         </div>
       </div>
-      <div className="bg_card w-[93%] rounded-xl py-1 flex justify-evenly items-center md:hidden">
+      <div className="bg_card md:hidden w-[93%] rounded-xl py-1 flex justify-evenly items-center">
         {menu.map((menu) => (
           <Link
             activeClass="active"
@@ -113,7 +107,7 @@ function Header() {
             duration={500}
             key={menu.id}
             // href={menu.path}
-            className="rounded-md hover:bg-black"
+            className="menu_item rounded-md hover:bg-black"
           >
             <div>{menu.icon}</div>
           </Link>

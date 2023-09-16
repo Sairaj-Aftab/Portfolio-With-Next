@@ -55,7 +55,6 @@ function ContactSection({
         </div>
         <div className="md:flex justify-between gap-5 px-5 mt-10">
           <form
-            data-aos="fade-right"
             onSubmit={submitEmail}
             className="contact flex-1 flex flex-col gap-3"
           >
@@ -92,7 +91,7 @@ function ContactSection({
               Send Mail
             </button>
           </form>
-          <div data-aos="fade-left" className="flex-1 flex flex-col gap-5">
+          <div className="flex-1 flex flex-col gap-5">
             {/* Email */}
             <div className="bg_card flex items-center gap-5 p-5 rounded-md">
               <div className="text-3xl">
@@ -109,9 +108,12 @@ function ContactSection({
                   </p>
                 ))}
               </div>
+              <a href="https://wa.me/01881591572" target="_blank">
+                WhatsApp
+              </a>
             </div>
             {/* WhatsApp */}
-            <div className="bg_card flex items-center gap-5 p-5 rounded-md">
+            {/* <div className="bg_card flex items-center gap-5 p-5 rounded-md">
               <div className="text-3xl">
                 <BsWhatsapp />
               </div>
@@ -128,7 +130,7 @@ function ContactSection({
                   </p>
                 ))}
               </div>
-            </div>
+            </div> */}
             {/* Google Map */}
             <div className="bg_card flex flex-col gap-2 p-5 rounded-md">
               <div className="flex items-center gap-5">

@@ -4,8 +4,9 @@ import Image from "next/image";
 import personal from "../../public/sairaj2.png";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import deploy from "../../public/animation/deploy.json";
-import Button from "./HelperCom/Button";
+import ButtonEle from "./HelperCom/Button";
 import { TypeAnimation } from "react-type-animation";
+import { Element, Link } from "react-scroll";
 
 type props = {
   firstTitle?: string;
@@ -17,10 +18,7 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
   return (
     <div id="Home">
       <div className="lg:h-[100vh] h-[100vh] flex flex-col-reverse gap-10 md:flex-row justify-center md:items-center slide">
-        <div
-          data-aos="fade-right"
-          className="md:flex-1 flex flex-col items-center gap-3 py-5 sm:py-0"
-        >
+        <div className="md:flex-1 flex flex-col items-center gap-3 py-5 sm:py-0">
           <h1 className="shadow_text lg:text-2xl text-xl font-semibold text-white">
             {firstTitle}
           </h1>
@@ -47,15 +45,18 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
           <p className="lg:text-lg text-sm text-center font-semibold text-white italic px-2 lg:px-0">
             {desTitle}
           </p>
-          <Button text="Get in touch" />
-          {/* <button className="btn text-lg font-semibold flex gap-1">
-            <span>Get in touch</span>
-          </button> */}
+          <Link
+            activeClass="active"
+            to="Contact"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+          >
+            <ButtonEle text="Get in touch" />
+          </Link>
         </div>
-        <div
-          data-aos="fade-left"
-          className="md:flex-1 flex flex-col items-center justify-center text-center sm:block mt-5 sm:mt-0"
-        >
+        <div className="md:flex-1 flex flex-col items-center justify-center text-center sm:block mt-5 sm:mt-0">
           <Image
             src={personal}
             alt="Sairaj Aftab"
@@ -63,11 +64,7 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
           />
         </div>
       </div>
-      <div
-        data-aos="zoom-in"
-        data-aos-duration="1500"
-        className="top-0 bottom-0 left-0 right-0 -z-20 fixed flex flex-col items-center justify-center"
-      >
+      <div className="top-0 bottom-0 left-0 right-0 -z-20 fixed flex flex-col items-center justify-center">
         <Player
           autoplay
           loop
