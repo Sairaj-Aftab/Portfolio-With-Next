@@ -10,7 +10,7 @@ function ProjectSection({ head_title }: { head_title: string }) {
     modules: [Pagination],
   };
   return (
-    <div id="Projects" data-aos="zoom-in-up">
+    <div id="Projects" className="bg-[#011627]">
       <div className="text-center flex flex-col">
         <div className="head_text_parent">
           <h1 className="head_text">{head_title}</h1>
@@ -27,6 +27,7 @@ function ProjectSection({ head_title }: { head_title: string }) {
             dynamicBullets: true,
           }}
           navigation={true}
+          speed={1000}
           modules={[Pagination, Navigation]}
           breakpoints={{
             640: {

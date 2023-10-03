@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 import TestimonialCard from "./TestimonialCard";
 
 const testi = [
@@ -64,12 +64,17 @@ function TestimonialSection({
     loop: true,
 
     loopedSlides: 2,
+    // autoplay: {
+    //   delay: 0, // Set the delay between slide transitions in milliseconds
+    //   disableOnInteraction: true, // Set to true if you want to stop autoplay on user interaction (like click or touch)
+    // },
+    // speed: 5000,
     pagination: { dynamicBullets: true },
-    modules: [EffectCoverflow, Pagination],
+    modules: [EffectCoverflow, Pagination, Autoplay],
   };
 
   return (
-    <div id="Testimonial" data-aos="zoom-in" className="testimonial_section">
+    <div id="Testimonial" className="testimonial_section bg-[#011627]">
       <div className="text-center flex flex-col">
         <div className="head_text_parent">
           <h1 className="head_text">{head_title}</h1>

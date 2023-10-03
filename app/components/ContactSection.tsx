@@ -96,8 +96,8 @@ function ContactSection({
           </form>
           <div className="flex-1 flex flex-col gap-5 mt-2 md:mt-0">
             {/* Google Map */}
-            <div className="bg_card flex flex-col gap-2 p-5 rounded-md">
-              <div className="flex items-center gap-5">
+            <div className="bg_card flex flex-col gap-2 rounded-md">
+              <div className="flex items-center gap-5 px-3 pt-3 sm:px-5 sm:pt-5">
                 <div className="text-3xl">
                   <BiMap />
                 </div>
@@ -119,7 +119,7 @@ function ContactSection({
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
-              <div className="flex justify-evenly items-center md:mt-3">
+              <div className="flex justify-evenly items-center py-3">
                 <a href="https://wa.me/+8801881591572" target="_blank">
                   <Image src={whatsapp} alt="" className="w-10" />
                 </a>

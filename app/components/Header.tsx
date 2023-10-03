@@ -57,78 +57,80 @@ function Header() {
   return (
     <div className="fixed top-5 left-0 w-full z-50 flex justify-center">
       <div className="hidden md:block">
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          className="bg_card rounded-xl py-1 px-6 flex gap-10 text-lg font-[500]"
-        >
-          <Link
-            activeClass="active"
-            to="Home"
-            spy={true}
-            smooth={true}
-            // offset={-50}
-            duration={500}
-            className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
+        {mMenu && (
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            className="bg_card rounded-xl py-1 px-6 flex gap-10 text-lg font-[500]"
           >
-            <span>Home</span>
-          </Link>
-          <Link
-            activeClass="active"
-            to="About"
-            spy={true}
-            smooth={true}
-            offset={-50}
-            duration={500}
-            className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
-          >
-            <span>About</span>
-          </Link>
-          <Link
-            activeClass="active"
-            to="Projects"
-            spy={true}
-            smooth={true}
-            // offset={-50}
-            duration={500}
-            className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
-          >
-            <span>Projects</span>
-          </Link>
-          <Link
-            activeClass="active"
-            to="Testimonial"
-            spy={true}
-            smooth={true}
-            // offset={-50}
-            duration={500}
-            className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
-          >
-            <span>Testimonial</span>
-          </Link>
-          <Link
-            activeClass="active"
-            to="Blogs"
-            spy={true}
-            smooth={true}
-            // offset={-50}
-            duration={500}
-            className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
-          >
-            <span>Blogs</span>
-          </Link>
-          <Link
-            activeClass="active"
-            to="Contact"
-            spy={true}
-            smooth={true}
-            // offset={-50}
-            duration={500}
-            className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
-          >
-            <span>Contact</span>
-          </Link>
-        </div>
+            <Link
+              activeClass="active"
+              to="Home"
+              spy={true}
+              smooth={true}
+              // offset={-50}
+              duration={500}
+              className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
+            >
+              <span>Home</span>
+            </Link>
+            <Link
+              activeClass="active"
+              to="About"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={500}
+              className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
+            >
+              <span>About</span>
+            </Link>
+            <Link
+              activeClass="active"
+              to="Projects"
+              spy={true}
+              smooth={true}
+              // offset={-50}
+              duration={500}
+              className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
+            >
+              <span>Projects</span>
+            </Link>
+            <Link
+              activeClass="active"
+              to="Testimonial"
+              spy={true}
+              smooth={true}
+              // offset={-50}
+              duration={500}
+              className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
+            >
+              <span>Testimonial</span>
+            </Link>
+            <Link
+              activeClass="active"
+              to="Blogs"
+              spy={true}
+              smooth={true}
+              // offset={-50}
+              duration={500}
+              className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
+            >
+              <span>Blogs</span>
+            </Link>
+            <Link
+              activeClass="active"
+              to="Contact"
+              spy={true}
+              smooth={true}
+              // offset={-50}
+              duration={500}
+              className="menu_item px-2 rounded-md hover:bg-black cursor-pointer"
+            >
+              <span>Contact</span>
+            </Link>
+          </div>
+        )}
         <div className="absolute right-12 lg:right-20 xl:right-32 top-1">
           {!mMenu && (
             <BiMenu
