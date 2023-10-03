@@ -11,13 +11,13 @@ function ProjectSection({ head_title }: { head_title: string }) {
   };
   return (
     <div id="Projects" data-aos="zoom-in-up">
-      <div className="text-center flex flex-col gap-16">
+      <div className="text-center flex flex-col">
         <div className="head_text_parent">
           <h1 className="head_text">{head_title}</h1>
           <h1 className="head_text">{head_title}</h1>
         </div>
       </div>
-      <div className="pt-20 sm:px-5">
+      <div className="pt-4 md:pt-5 sm:px-5">
         <Swiper
           className="swiper-project"
           slidesPerView={1}

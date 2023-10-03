@@ -7,6 +7,10 @@ import deploy from "../../public/animation/deploy.json";
 import ButtonEle from "./HelperCom/Button";
 import { TypeAnimation } from "react-type-animation";
 import { Element, Link } from "react-scroll";
+import linkedin from "../../public/linkedin.png";
+import github from "../../public/github.png";
+import twitter from "../../public/twitter.png";
+import facebook from "../../public/facebook.png";
 
 type props = {
   firstTitle?: string;
@@ -16,8 +20,11 @@ type props = {
 
 function SliderSection({ firstTitle, title, desTitle }: props) {
   return (
-    <div id="Home">
-      <div className="lg:h-[100vh] h-[100vh] flex flex-col-reverse gap-10 md:flex-row justify-center md:items-center slide">
+    <div
+      id="Home"
+      className="lg:h-[100vh] h-[100vh] flex flex-col justify-center"
+    >
+      <div className="flex flex-col-reverse gap-10 md:flex-row justify-center md:items-center slide">
         <div className="md:flex-1 flex flex-col items-center gap-3 py-5 sm:py-0">
           <h1 className="shadow_text lg:text-2xl text-xl font-semibold text-white">
             {firstTitle}
@@ -33,7 +40,7 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
                 1000,
                 "Hey!I'm Sairaj Aftab",
                 1000,
-                "Hey!I'm a Developer",
+                "Hey!I'm a Full-Stack Developer",
                 500,
               ]}
               speed={30}
@@ -58,13 +65,40 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
         </div>
         <div className="md:flex-1 flex flex-col items-center justify-center text-center sm:block mt-5 sm:mt-0">
           <Image
-            src={personal}
+            src={personal ? personal : ""}
             alt="Sairaj Aftab"
             className="rounded-b-[42px] sm:rounded-b-[110px] slide_img w-[95%] h-auto sm:w-[80%] mx-auto"
           />
         </div>
       </div>
-      <div className="top-0 bottom-0 left-0 right-0 -z-20 fixed flex flex-col items-center justify-center">
+      <div className="w-full flex justify-center items-center">
+        <ul className="flex gap-5">
+          <li>
+            <a href="https://github.com/Sairaj-Aftab" target="_blank">
+              <Image src={github} alt="" className="w-10" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/sairaj-aftab-8808ba1b5/"
+              target="_blank"
+            >
+              <Image src={linkedin} alt="" className="w-10" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/SairajAftab" target="_blank">
+              <Image src={twitter} alt="" className="w-10" />
+            </a>
+          </li>
+          <li>
+            <a href="https://web.facebook.com/sjsairaj.sairaj" target="_blank">
+              <Image src={facebook} alt="" className="w-10" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="top-0 bottom-0 left-0 right-0 -z-20 fixed hidden sm:flex flex-col items-center justify-center">
         <Player
           autoplay
           loop

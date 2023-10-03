@@ -4,9 +4,10 @@ import ProjectSection from "./components/ProjectSection";
 import SliderSection from "./components/SliderSection";
 import TestimonialSection from "./components/TestimonialSection";
 
-export default function Home() {
+export default async function Home() {
   const email = ["sairajaftab@gmail.com", "sairajaftab769@gmail.com"];
   const whatsApp = ["+8801881591572"];
+
   return (
     <main>
       <SliderSection

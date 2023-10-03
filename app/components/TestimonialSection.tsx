@@ -62,26 +62,22 @@ function TestimonialSection({
       slideShadows: true,
     },
     loop: true,
-    loopFillGroupWithBlank: true,
+
     loopedSlides: 2,
     pagination: { dynamicBullets: true },
     modules: [EffectCoverflow, Pagination],
   };
 
   return (
-    <div
-      id="Testimonial"
-      data-aos="zoom-in"
-      className="testimonial_section py-5"
-    >
-      <div className="text-center flex flex-col gap-16">
+    <div id="Testimonial" data-aos="zoom-in" className="testimonial_section">
+      <div className="text-center flex flex-col">
         <div className="head_text_parent">
           <h1 className="head_text">{head_title}</h1>
           <h1 className="head_text">{head_title}</h1>
         </div>
         <p className="title_text">{title}</p>
       </div>
-      <div className="mx-5 pt-16">
+      <div className="mx-5">
         <Swiper {...swiperParams}>
           {testi?.map((data, index) => (
             <SwiperSlide key={index}>
