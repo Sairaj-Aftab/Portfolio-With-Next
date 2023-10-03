@@ -17,11 +17,11 @@ function AboutSection({ head_title }: props) {
             <div className="bg_card px-5 pt-5 text-justify">
               <p className="text-justify text-slate-200 text-lg font-extralight leading-6">
                 <p>
-                  Hello! I'm Sairaj Aftab, a passionate full stack web developer
-                  with a flair for crafting seamless, user-centric digital
-                  experiences. With a strong foundation in both front-end and
-                  back-end technologies, I specialize in bringing ideas to life
-                  through clean, efficient code.
+                  Hello! I&apos;m Sairaj Aftab, a passionate full stack web
+                  developer with a flair for crafting seamless, user-centric
+                  digital experiences. With a strong foundation in both
+                  front-end and back-end technologies, I specialize in bringing
+                  ideas to life through clean, efficient code.
                 </p>
                 <h5 className="my-2 text-lg font-semibold text-white">
                   My Approach
