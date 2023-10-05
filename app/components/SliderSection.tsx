@@ -24,7 +24,7 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
       id="Home"
       className="lg:h-[100vh] h-[100vh] flex flex-col justify-center"
     >
-      <div className="flex flex-col-reverse gap-10 md:flex-row justify-center md:items-center slide">
+      <div className="flex flex-col-reverse gap-6 sm:gap-10 md:flex-row justify-center md:items-center slide">
         <div className="md:flex-1 flex flex-col items-center gap-3 py-5 sm:py-0">
           <h1 className="shadow_text lg:text-2xl text-xl font-semibold text-white">
             {firstTitle}

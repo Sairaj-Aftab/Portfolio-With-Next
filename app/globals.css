@@ -49,7 +49,7 @@ img {
 .slide_head {
   text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
   color: var(--primary-color);
-  @apply lg:text-[2rem] sm:text-4xl text-2xl font-mono font-extrabold w-[278px] sm:w-[416px] lg:w-[555px];
+  @apply lg:text-[2rem] sm:text-4xl text-2xl font-mono font-extrabold w-[278px] sm:w-[416px] lg:w-[555px]  h-[4.5rem] sm:h-auto;
 }
 /* Slide Image */
 .slide_img {
