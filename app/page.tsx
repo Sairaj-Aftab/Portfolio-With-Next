@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
 import ProjectSection from "./components/ProjectSection";
@@ -10,6 +11,7 @@ export default async function Home() {
 
   return (
     <main>
+      <Toaster position="top-center" reverseOrder={false} />
       <SliderSection
         firstTitle="Full-Stack Revolutionary"
         title="Hey! I'm Sairaj Aftab"

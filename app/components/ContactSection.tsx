@@ -1,10 +1,12 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import { useForm } from "@formspree/react";
 import { BiMap } from "react-icons/bi";
 import whatsapp from "../../public/whatsapp.png";
 import skype from "../../public/skype.png";
 import instagram from "../../public/instagram.png";
+import toast from "react-hot-toast";
 
 type props = {
   head_title: string;
@@ -30,12 +32,24 @@ function ContactSection({
   whatsApp,
   address,
 }: props) {
+  const [state, handleSubmit] = useForm("mknlpkda");
+
   const [input, setInput] = useState<input>({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
+  if (state.succeeded) {
+    // toast.success("Thanks for joining!");
+    toast("Thanks for joining!", {
+      duration: 5000,
+      icon: "👏",
+    });
+  }
+  if (state.errors) {
+    toast.error("This didn't work.");
+  }
 
   const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -46,7 +60,6 @@ function ContactSection({
 
   const submitEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(input);
   };
 
   return (
@@ -58,7 +71,7 @@ function ContactSection({
         </div>
         <div className="md:flex justify-between gap-5 px-5">
           <form
-            onSubmit={submitEmail}
+            onSubmit={handleSubmit}
             className="contact flex-1 flex flex-col gap-3"
           >
             <h2 className="title_text">{title2}</h2>
@@ -68,13 +81,16 @@ function ContactSection({
               value={input.name}
               onChange={changeValue}
               placeholder="Enter your name"
+              required
             />
             <input
-              type="text"
+              id="email"
+              type="email"
               name="email"
               value={input.email}
               onChange={changeValue}
               placeholder="Enter your email"
+              required
             />
             <input
               type="text"
@@ -82,13 +98,16 @@ function ContactSection({
               value={input.subject}
               onChange={changeValue}
               placeholder="Enter your subject"
+              required
             />
             <textarea
+              id="message"
               rows={7}
               name="message"
               value={input.message}
               onChange={changeMsgValue}
               placeholder="Enter your message"
+              required
             ></textarea>
             <button type="submit" className="btn text-lg font-semibold">
               Submit
