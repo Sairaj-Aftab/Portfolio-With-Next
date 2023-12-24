@@ -3,6 +3,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 import ProjectCard from "./ProjectCard";
+import projects from "@/data/projects";
 
 function ProjectSection({ head_title }: { head_title: string }) {
   const swiperParams: any = {
@@ -44,21 +45,16 @@ function ProjectSection({ head_title }: { head_title: string }) {
             },
           }}
         >
-          <SwiperSlide>
-            <ProjectCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProjectCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProjectCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProjectCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProjectCard />
-          </SwiperSlide>
+          {projects.map((data, index) => (
+            <SwiperSlide>
+              <ProjectCard
+                banner={data.banner}
+                title={data.title}
+                tools={data.tools}
+                liveLink={data.liveLink}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

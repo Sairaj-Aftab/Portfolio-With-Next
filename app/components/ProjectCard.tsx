@@ -1,46 +1,41 @@
 import Image from "next/image";
 import React from "react";
-import img from "@/public/project.png";
 import Link from "next/link";
 
-function ProjectCard() {
+type props = {
+  banner: any;
+  title: string;
+  tools: string[];
+  liveLink: string;
+};
+
+function ProjectCard({ banner, title, tools, liveLink }: props) {
   return (
     <div>
       <div className="bg_card rounded-xl">
-        <Image src={img} alt="Project" className="rounded-t-lg" />
+        <Image
+          src={banner}
+          alt="Project"
+          sizes="100vw"
+          className="rounded-t-lg"
+        />
         <div className="p-2">
-          <h1 className="text-lg font-semibold text-white">
-            Video uploadiing full-stack YouTube clone
-          </h1>
+          <h1 className="text-lg font-semibold text-white">{title}</h1>
           <div className="flex gap-1 flex-wrap my-2">
-            <span className="bg-slate-800 py-1 px-2 rounded-md inline-block">
-              react js
-            </span>
-            <span className="bg-slate-800 py-1 px-2 rounded-md inline-block">
-              react js
-            </span>
-            <span className="bg-slate-800 py-1 px-2 rounded-md inline-block">
-              react js
-            </span>
-            <span className="bg-slate-800 py-1 px-2 rounded-md inline-block">
-              react js
-            </span>
-            <span className="bg-slate-800 py-1 px-2 rounded-md inline-block">
-              react js
-            </span>
-            <span className="bg-slate-800 py-1 px-2 rounded-md inline-block">
-              react js
-            </span>
-            <span className="bg-slate-800 py-1 px-2 rounded-md inline-block">
-              react js
-            </span>
+            {tools &&
+              tools.map((data) => (
+                <span className="bg-slate-800 py-1 px-2 rounded-md inline-block">
+                  {data}
+                </span>
+              ))}
           </div>
-          <Link
-            href="/"
+          <a
+            href={liveLink}
+            target="_blank"
             className="bg-[var(--primary-color)] rounded-md py-1 px-2 text-sm font-semibold text-white"
           >
             Live Demo
-          </Link>
+          </a>
         </div>
       </div>
     </div>

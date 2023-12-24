@@ -19,10 +19,10 @@ export default async function Home() {
       />
       <AboutSection head_title="About Me" />
       <ProjectSection head_title="Projects" />
-      <TestimonialSection
+      {/* <TestimonialSection
         head_title="Testimonial"
         title="fjk kdfjkf sfjkdsfj dkfjdskfjd dkfj teriot"
-      />
+      /> */}
       <ContactSection
         head_title="Contact Me"
         title2="Let's work together"

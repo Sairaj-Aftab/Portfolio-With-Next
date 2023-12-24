@@ -1,5 +1,8 @@
 import React from "react";
 
+import Image from "next/image";
+import skills from "@/data/skills";
+
 type props = {
   head_title: string;
 };
@@ -12,12 +15,11 @@ function AboutSection({ head_title }: props) {
           <h1 className="head_text text-center">{head_title}</h1>
         </div>
         <div className="sm:flex gap-5 justify-between">
-          <div className="flex-1"></div>
           <div className="flex-1">
-            <div className="bg_card px-5 pt-5 text-justify">
+            <div className="bg_card px-5 pt-5 text-justify h-full">
               <p className="text-justify text-slate-200 text-lg font-extralight leading-6">
                 <p>
-                  Hello! I&apos;m Sairaj Aftab, a passionate full stack web
+                  Hello! This is Sairaj Aftab, a passionate full stack web
                   developer with a flair for crafting seamless, user-centric
                   digital experiences. With a strong foundation in both
                   front-end and back-end technologies, I specialize in bringing
@@ -32,7 +34,13 @@ function AboutSection({ head_title }: props) {
                   learn, and grow. I thrive on understanding the unique goals of
                   each project and tailoring solutions that exceed expectations.
                 </p>
-                <h5 className="my-2 text-lg font-semibold text-white">
+              </p>
+            </div>
+          </div>
+          <div className="flex-1">
+            <div className="bg_card px-5 pt-5 text-justify h-full">
+              <p className="text-justify text-slate-200 text-lg font-extralight leading-6">
+                <h5 className="text-lg font-semibold text-white">
                   What I Bring to the Table
                 </h5>
                 <p>
@@ -51,6 +59,22 @@ function AboutSection({ head_title }: props) {
                 </p>
               </p>
             </div>
+          </div>
+        </div>
+        <div className="bg_card pb-2">
+          <h1 className="text-center text-2xl font-bold text-[#03a9f4] py-2">
+            Skills
+          </h1>
+          <div className="flex gap-2 items-center justify-center flex-wrap">
+            {skills.map((data, index) => (
+              <div
+                key={index}
+                className="w-[90px] h-[90px] flex flex-col items-center justify-center border rounded-lg"
+              >
+                <Image src={data.img} alt={data.title} width={60} height={60} />
+                <p className="text-base font-semibold">{data.title}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
