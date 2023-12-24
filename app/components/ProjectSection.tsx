@@ -46,7 +46,7 @@ function ProjectSection({ head_title }: { head_title: string }) {
           }}
         >
           {projects.map((data, index) => (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <ProjectCard
                 banner={data.banner}
                 title={data.title}

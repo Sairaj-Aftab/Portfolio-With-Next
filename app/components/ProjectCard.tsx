@@ -23,8 +23,11 @@ function ProjectCard({ banner, title, tools, liveLink }: props) {
           <h1 className="text-lg font-semibold text-white">{title}</h1>
           <div className="flex gap-1 flex-wrap my-2">
             {tools &&
-              tools.map((data) => (
-                <span className="bg-slate-800 py-1 px-2 rounded-md inline-block">
+              tools.map((data, index) => (
+                <span
+                  key={index}
+                  className="bg-slate-800 py-1 px-2 rounded-md inline-block"
+                >
                   {data}
                 </span>
               ))}
