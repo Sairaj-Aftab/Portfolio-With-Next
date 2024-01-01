@@ -8,6 +8,7 @@ import reduxIcon from "@/public/skill/redux.png";
 import nodeIcon from "@/public/skill/node.png";
 import expressIcon from "@/public/skill/express.png";
 import mongodbIcon from "@/public/skill/mongodb.png";
+import firebaseIcon from "@/public/skill/firebase.png";
 import gitIcon from "@/public/skill/git.png";
 import bootstrapIcon from "@/public/skill/bootstrap.png";
 import wordpressIcon from "@/public/skill/wordpress.png";
@@ -52,6 +53,10 @@ const skills = [
   {
     img: mongodbIcon,
     title: "MongoDB",
+  },
+  {
+    img: firebaseIcon,
+    title: "Firebase",
   },
   {
     img: gitIcon,
