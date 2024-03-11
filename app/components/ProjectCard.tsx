@@ -17,7 +17,7 @@ function ProjectCard({ banner, title, tools, liveLink }: props) {
           src={banner}
           alt="Project"
           sizes="100vw"
-          className="rounded-t-lg"
+          className="rounded-t-lg h-[455px] object-cover object-top"
         />
         <div className="p-2">
           <h1 className="text-lg font-semibold text-white">{title}</h1>
