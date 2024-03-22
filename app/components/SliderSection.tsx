@@ -181,7 +181,7 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{
-          delay: 0.5,
+          delay: 0.9,
         }}
       >
         <Player
