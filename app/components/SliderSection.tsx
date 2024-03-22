@@ -11,6 +11,7 @@ import linkedin from "../../public/linkedin.png";
 import github from "../../public/github.png";
 import twitter from "../../public/twitter.png";
 import facebook from "../../public/facebook.png";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 type props = {
   firstTitle?: string;
@@ -19,6 +20,29 @@ type props = {
 };
 
 function SliderSection({ firstTitle, title, desTitle }: props) {
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
+  const { scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [1, 0], [0, 1]);
+
   return (
     <div
       id="Home"
@@ -78,33 +102,88 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
         </div>
       </div>
       <div className="w-full flex justify-center items-center">
-        <ul className="flex gap-5">
-          <li>
-            <a href="https://github.com/Sairaj-Aftab" target="_blank">
-              <Image src={github} alt="" className="w-10" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/sairaj-aftab-8808ba1b5/"
-              target="_blank"
-            >
-              <Image src={linkedin} alt="" className="w-10" />
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/SairajAftab" target="_blank">
-              <Image src={twitter} alt="" className="w-10" />
-            </a>
-          </li>
-          <li>
-            <a href="https://web.facebook.com/sjsairaj.sairaj" target="_blank">
-              <Image src={facebook} alt="" className="w-10" />
-            </a>
-          </li>
-        </ul>
+        <motion.ul
+          className="flex gap-5"
+          variants={container}
+          initial="hidden"
+          animate="visible"
+        >
+          {[0].map((index) => (
+            <>
+              {/* <motion.li key={index} className="item" variants={item} /> */}
+              <motion.li
+                key={index}
+                variants={item}
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                whileTap={{
+                  scale: 0.8,
+                  rotate: -360,
+                }}
+              >
+                <a href="https://github.com/Sairaj-Aftab" target="_blank">
+                  <Image src={github} alt="" className="w-10" />
+                </a>
+              </motion.li>
+              <motion.li
+                key={index}
+                variants={item}
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                whileTap={{
+                  scale: 0.8,
+                  rotate: -360,
+                }}
+              >
+                <a
+                  href="https://www.linkedin.com/in/sairaj-aftab-8808ba1b5/"
+                  target="_blank"
+                >
+                  <Image src={linkedin} alt="" className="w-10" />
+                </a>
+              </motion.li>
+              <motion.li
+                key={index}
+                variants={item}
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                whileTap={{
+                  scale: 0.8,
+                  rotate: -360,
+                }}
+              >
+                <a href="https://twitter.com/SairajAftab" target="_blank">
+                  <Image src={twitter} alt="" className="w-10" />
+                </a>
+              </motion.li>
+              <motion.li
+                key={index}
+                variants={item}
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                whileTap={{
+                  scale: 0.8,
+                  rotate: -360,
+                }}
+              >
+                <a
+                  href="https://web.facebook.com/sjsairaj.sairaj"
+                  target="_blank"
+                >
+                  <Image src={facebook} alt="" className="w-10" />
+                </a>
+              </motion.li>
+            </>
+          ))}
+        </motion.ul>
       </div>
-      <div className="top-0 bottom-0 left-0 right-0 -z-20 fixed hidden sm:flex flex-col items-center justify-center">
+      <motion.div
+        className="top-0 bottom-0 left-0 right-0 -z-20 fixed hidden sm:flex flex-col items-center justify-center"
+        style={{
+          scale,
+        }}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{
+          delay: 0.5,
+        }}
+      >
         <Player
           autoplay
           loop
@@ -114,7 +193,7 @@ function SliderSection({ firstTitle, title, desTitle }: props) {
           className="scale-125 md:scale-100 w-full h-full"
           background="#011627"
         ></Player>
-      </div>
+      </motion.div>
     </div>
   );
 }

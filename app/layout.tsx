@@ -6,7 +6,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Roboto } from "next/font/google";
-import { AOSInit } from "@/utility/aos";
+import ScrollAnim from "./components/ScrollAnim";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700", "900"],
@@ -27,8 +27,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={roboto.className}>
-      <AOSInit />
       <body>
+        <ScrollAnim />
         <Header />
         <main>{children}</main>
         <Footer />

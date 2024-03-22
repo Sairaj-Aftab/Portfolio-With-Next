@@ -355,4 +355,14 @@ img {
     opacity: 1;
   }
 }
-/* Animated Button End */
+/* Progress bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: red;
+  transform-origin: 0%;
+  z-index: 999999;
+}
