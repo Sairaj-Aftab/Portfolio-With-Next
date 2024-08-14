@@ -1,10 +1,16 @@
 import youtube from "@/public/project/youtube.png";
-import portfolio from "@/public/project/portfolio.png";
+import obt from "@/public/project/obt1.jpeg";
 import portfolio1 from "@/public/project/portfolio1.png";
 import charity from "@/public/project/charity.jpg";
 import photoDiscovery from "@/public/project/photo_discovery.png";
 
 const projects = [
+  {
+    banner: obt,
+    title: "Online Bus Terminal like Bus Scheduling System",
+    tools: ["ReactJS", "NodeJS", "Express", "Prisma", "MongoDB"],
+    liveLink: "https://obtcoxsbazar.com/",
+  },
   {
     banner: youtube,
     title: "Video uploading platform like YouTube",

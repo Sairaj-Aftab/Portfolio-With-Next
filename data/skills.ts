@@ -13,6 +13,8 @@ import gitIcon from "@/public/skill/git.png";
 import bootstrapIcon from "@/public/skill/bootstrap.png";
 import wordpressIcon from "@/public/skill/wordpress.png";
 import graphqlIcon from "@/public/skill/graphql.png";
+import dockerIcon from "@/public/skill/docker.png";
+import prismaIcon from "@/public/skill/prisma.png";
 
 const skills = [
   {
@@ -58,6 +60,14 @@ const skills = [
   {
     img: firebaseIcon,
     title: "Firebase",
+  },
+  {
+    img: dockerIcon,
+    title: "Docker",
+  },
+  {
+    img: prismaIcon,
+    title: "Prisma",
   },
   {
     img: graphqlIcon,
